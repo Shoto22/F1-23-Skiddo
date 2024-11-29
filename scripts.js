@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let posicion = resultados[carrera][indice] || '-';
                 celdaCarrera.textContent = posicion;
                 fila.appendChild(celdaCarrera);
-                // Supongamos que los puntos se calculan de alguna manera aquí
+                // Aquí se calcularán los puntos basados en la posición
                 totalPuntos += posicion !== '-' ? obtenerPuntos(posicion) : 0;
             }
 
@@ -78,5 +78,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ejemplo de uso: Agregar video e imagen destacada
     agregarVideoImagen('https://via.placeholder.com/150', 'img');
-    agregarVideoImagen('https://www.w3schools.com/html/mov_bbb.mp4', 'video');
-});
+    agregarVideoImagen('https://www.w3schools.com/html
