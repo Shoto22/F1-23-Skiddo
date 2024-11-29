@@ -75,7 +75,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     actualizarTabla();
-
-    // Ejemplo de uso: Agregar video e imagen destacada
-    agregarVideoImagen('https://via.placeholder.com/150', 'img');
-    agregarVideoImagen('https://www.w3schools.com/html
+    agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video'); });
