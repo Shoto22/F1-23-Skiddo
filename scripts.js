@@ -66,13 +66,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function agregarVideoImagen(url, tipo) {
         const contenedor = document.getElementById('videos-imagenes');
-        const elemento = document.createElement(tipo === 'video' ? 'video' : 'img');
-        elemento.src = url;
         if (tipo === 'video') {
-            elemento.controls = true;
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.width = "560";
+            iframe.height = "315";
+            iframe.frameBorder = "0";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            contenedor.appendChild(iframe);
+        } else {
+            const img = document.createElement('img');
+            img.src = url;
+            contenedor.appendChild(img);
         }
-        contenedor.appendChild(elemento);
     }
 
     actualizarTabla();
-    agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video'); });
+
+    // Añadir el video de YouTube
+    agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
+});
