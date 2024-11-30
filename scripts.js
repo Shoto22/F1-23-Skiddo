@@ -92,11 +92,19 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedor.appendChild(contenedorFigura);
     }
 
+    // Forzar Vista de Escritorio
+    function forceDesktopView() {
+        const viewport = document.querySelector("meta[name=viewport]");
+        viewport.setAttribute("content", "width=1024");
+    }
+
+    forceDesktopView();
+
     actualizarTabla();
 
     // Añadir el video de YouTube
     agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
 
     // Añadir imágenes desde GitHub con un pie de foto
-    agregarVideoImagen('Bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
+    agregarVideoImagen('https://tu-usuario.github.io/tu-repositorio/imagenes/quevedo-gana-bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
 });
