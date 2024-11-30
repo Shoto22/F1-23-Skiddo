@@ -43,8 +43,9 @@ th, td {
 
 #destacados iframe,
 #destacados img {
-    width: 560px;
-    height: 315px;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
     margin-bottom: 1em;
 }
 
@@ -56,4 +57,43 @@ footer {
     position: static;
     width: 100%;
     bottom: 0;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    main {
+        padding: 1em;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+
+    #destacados iframe,
+    #destacados img {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        padding: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    table, th, td {
+        font-size: 0.8em;
+    }
+
+    main {
+        padding: 0.5em;
+    }
 }
