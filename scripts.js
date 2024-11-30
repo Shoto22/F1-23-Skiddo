@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const resultados = {
         Bahrein: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-        Jeddah: [],
-        Imola: [],
-        Montmelo: [],
-        Silverstone: [],
-        Spa: [],
-        Singapur: [],
-        Monza: [],
-        Austin: [],
-        Interlagos: []
+	Jeddah: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
+	Imola: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
+	Montmelo: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
+	Silverstone: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+	 Spa: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
+	Singapur: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
+	Monza: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
+	Austin: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
+	Interlagos: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
     };
 
     const vueltaRapida = {
@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             elemento.src = url;
             elemento.width = 560;
             elemento.height = 315;
+            elemento.classList.add('clickable-image');
         }
         
         contenedorFigura.appendChild(elemento);
@@ -101,11 +102,34 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedor.appendChild(contenedorFigura);
     }
 
+    function forceDesktopView() {
+        const viewport = document.querySelector("meta[name=viewport]");
+        viewport.setAttribute("content", "width=1024");
+    }
+
+    // Manejar ampliación de imágenes
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('imgAmpliada');
+    const closeModal = document.querySelector('.close');
+
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('clickable-image')) {
+            modal.style.display = "block";
+            modalImg.src = event.target.src;
+        }
+    });
+
+    closeModal.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    forceDesktopView();
+
     actualizarTabla();
 
     // Añadir el video de YouTube
     agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
 
     // Añadir imágenes desde GitHub con un pie de foto
-    agregarVideoImagen('Bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
+    agregarVideoImagen('bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
 });
