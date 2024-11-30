@@ -106,5 +106,5 @@ document.addEventListener('DOMContentLoaded', () => {
     agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
 
     // Añadir imágenes desde GitHub con un pie de foto
-    agregarVideoImagen('https://tu-usuario.github.io/tu-repositorio/imagenes/quevedo-gana-bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
+    agregarVideoImagen('Bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
 });
