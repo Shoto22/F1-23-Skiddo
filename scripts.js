@@ -86,3 +86,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Añadir el video de YouTube
     agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
 });
+     agregarVideoImagen('Imagen de WhatsApp 2024-11-30 a las 14.32.05_d90cab53.jpg');
+});
