@@ -85,5 +85,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Añadir el video de YouTube
     agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
-    agregarVideoImagen('Bahrain.jpg', 'img');
+    agregarVideoImagen('Bahrain.jpg', 'img','Quevedo gana el GP de Bahrain');
 });
