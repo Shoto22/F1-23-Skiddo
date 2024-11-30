@@ -1,15 +1,15 @@
 // scripts.js
 document.addEventListener('DOMContentLoaded', () => {
     const pilotos = [
-        'Arcay', 'Brisa', 'Olegario', 'Diego',
-        'Piloto5', 'Piloto6', 'Piloto7', 'Piloto8',
-        'Piloto9', 'Piloto10', 'Piloto11', 'Piloto12',
-        'Piloto13', 'Piloto14', 'Piloto15', 'Piloto16',
-        'Piloto17', 'Piloto18', 'Piloto19', 'Piloto20'
+        'Quevedo', 'Tsunoda', 'Albon', 'Russell',
+        'Hulkenberg', 'Ocon', 'Leclerc', 'Alonso',
+        'Verstappen', 'Hamilton', 'Gasly', 'Checo',
+        'Zhou', 'Norris', 'Bottas', 'Magnussen',
+        'Brisa', 'Diego', 'Olegario', 'Piastri'
     ];
 
     const resultados = {
-        Bahrein: [],
+        Bahrein: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
         Jeddah: [],
         Imola: [],
         Montmelo: [],
@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 let posicion = resultados[carrera][indice] || '-';
                 celdaCarrera.textContent = posicion;
                 fila.appendChild(celdaCarrera);
-                // Aquí se calcularán los puntos basados en la posición
                 totalPuntos += posicion !== '-' ? obtenerPuntos(posicion) : 0;
             }
 
