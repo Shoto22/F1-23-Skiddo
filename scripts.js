@@ -63,27 +63,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function agregarVideoImagen(url, tipo) {
+    function agregarVideoImagen(url, tipo, caption = '') {
         const contenedor = document.getElementById('videos-imagenes');
+        const contenedorFigura = document.createElement('figure');
+        const elemento = document.createElement(tipo === 'video' ? 'iframe' : 'img');
+
         if (tipo === 'video') {
-            const iframe = document.createElement('iframe');
-            iframe.src = url;
-            iframe.width = "560";
-            iframe.height = "315";
-            iframe.frameBorder = "0";
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.allowFullscreen = true;
-            contenedor.appendChild(iframe);
+            elemento.src = url;
+            elemento.width = "560";
+            elemento.height = "315";
+            elemento.frameBorder = "0";
+            elemento.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            elemento.allowFullscreen = true;
         } else {
-            const img = document.createElement('img');
-            img.src = url;
-            contenedor.appendChild(img);
+            elemento.src = url;
+            elemento.width = 560;
+            elemento.height = 315;
         }
+        
+        contenedorFigura.appendChild(elemento);
+
+        if (caption) {
+            const figcaption = document.createElement('figcaption');
+            figcaption.textContent = caption;
+            contenedorFigura.appendChild(figcaption);
+        }
+
+        contenedor.appendChild(contenedorFigura);
     }
 
     actualizarTabla();
 
     // Añadir el video de YouTube
     agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
-    agregarVideoImagen('Bahrain.jpg', 'img','Quevedo gana el GP de Bahrain');
+
+    // Añadir imágenes desde GitHub con un pie de foto
+    agregarVideoImagen('imagenes/quevedo-gana-bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
 });
