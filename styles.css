@@ -46,6 +46,7 @@ th, td {
     width: 100%;
     max-width: 560px;
     height: auto;
+    aspect-ratio: 16 / 9;
     margin-bottom: 1em;
 }
 
@@ -67,12 +68,14 @@ footer {
 
     table, th, td {
         font-size: 0.9em;
+        padding: 0.3em;
     }
 
     #destacados iframe,
     #destacados img {
         width: 100%;
         height: auto;
+        aspect-ratio: 16 / 9;
     }
 
     footer {
@@ -91,9 +94,21 @@ footer {
 
     table, th, td {
         font-size: 0.8em;
+        padding: 0.2em;
     }
 
     main {
+        padding: 0.5em;
+    }
+
+    #destacados iframe,
+    #destacados img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    footer {
         padding: 0.5em;
     }
 }
