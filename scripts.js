@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         Interlagos: []
     };
 
+    const vueltaRapida = {
+        Bahrein: 'Quevedo'
+    };
+
     function actualizarTabla() {
         const cuerpoTabla = document.getElementById('resultados-body');
         cuerpoTabla.innerHTML = ''; // Limpiar el contenido anterior
@@ -37,6 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 celdaCarrera.textContent = posicion;
                 fila.appendChild(celdaCarrera);
                 totalPuntos += posicion !== '-' ? obtenerPuntos(posicion) : 0;
+
+                // Añadir punto por vuelta rápida si aplica
+                if (vueltaRapida[carrera] === piloto) {
+                    totalPuntos += 1;
+                }
             }
 
             let celdaTotal = document.createElement('td');
