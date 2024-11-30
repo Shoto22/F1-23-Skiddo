@@ -92,14 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedor.appendChild(contenedorFigura);
     }
 
-    // Forzar Vista de Escritorio
-    function forceDesktopView() {
-        const viewport = document.querySelector("meta[name=viewport]");
-        viewport.setAttribute("content", "width=1024");
-    }
-
-    forceDesktopView();
-
     actualizarTabla();
 
     // Añadir el video de YouTube
