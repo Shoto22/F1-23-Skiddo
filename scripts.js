@@ -1,4 +1,3 @@
-// scripts.js
 document.addEventListener('DOMContentLoaded', () => {
     const pilotos = [
         'Quevedo', 'Tsunoda', 'Albon', 'Russell',
@@ -10,15 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const resultados = {
         Bahrein: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-	Jeddah: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
-	Imola: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
-	Montmelo: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
-	Silverstone: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
-	 Spa: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
-	Singapur: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
-	Monza: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
-	Austin: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'], 
-	Interlagos: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+        Jeddah: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+        Imola: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+        Montmelo: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+        Silverstone: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+        Spa: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+        Singapur: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+        Monza: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+        Austin: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+        Interlagos: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
     };
 
     const vueltaRapida = {
@@ -102,6 +101,22 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedor.appendChild(contenedorFigura);
     }
 
+    function agregarNoticias() {
+        const noticias = [
+            { titulo: 'Quevedo, Diego y Brisa: Los Tres Mejores en Qualy', url: 'QBahrain.html' }
+        ];
+
+        const listaNoticias = document.getElementById('lista-noticias');
+        noticias.forEach(noticia => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = noticia.url;
+            link.textContent = noticia.titulo;
+            listItem.appendChild(link);
+            listaNoticias.appendChild(listItem);
+        });
+    }
+
     function forceDesktopView() {
         const viewport = document.querySelector("meta[name=viewport]");
         viewport.setAttribute("content", "width=1024");
@@ -126,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     forceDesktopView();
 
     actualizarTabla();
+    agregarNoticias();
 
     // Añadir el video de YouTube
     agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
