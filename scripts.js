@@ -90,15 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (tipo === 'video') {
             elemento.src = url;
-            elemento.width = "560";
-            elemento.height = "315";
+            elemento.width = "1120";
+            elemento.height = "630";
             elemento.frameBorder = "0";
             elemento.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             elemento.allowFullscreen = true;
         } else {
             elemento.src = url;
-            elemento.width = 560;
-            elemento.height = 315;
+            elemento.width = 1120;
+            elemento.height = 630;
             elemento.classList.add('clickable-image');
         }
         
@@ -159,5 +159,5 @@ document.addEventListener('DOMContentLoaded', () => {
     agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
 
     // Añadir imágenes desde GitHub con un pie de foto
-    agregarVideoImagen('https://tu-usuario.github.io/tu-repositorio/imagenes/quevedo-gana-bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
+    agregarVideoImagen('Bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
 });
