@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Zhou', 'Norris', 'Bottas', 'Magnussen',
         'Brisa', 'Diego', 'Olegario', 'Piastri'
     ];
-
+    
     const resultados = {
         Bahrein: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
         Jeddah: [1, 18, 14, 5, 16, 11, 7, 9, 4, 10, 19, 6, 15, 12, 13, 8, 3, 2, 20, 8],
