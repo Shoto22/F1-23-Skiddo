@@ -156,8 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
     agregarNoticias();
 
     // Añadir el video de YouTube
-    agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
+    agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video'),
+    agregarVideoImagen('https://www.youtube.com/watch?v=NNyX_JYdGOs', 'video', 'Jeddah chill dende a vista de Diego');
 
     // Añadir imágenes desde GitHub con un pie de foto
-    agregarVideoImagen('Bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
+    agregarVideoImagen('Bahrain.jpg', 'img', 'Quevedo gaña o GP de Bahrain');
 });
