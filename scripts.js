@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const resultados = {
         Bahrein: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-        Jeddah: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
+        Jeddah: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
         Imola: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
         Montmelo: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
         Silverstone: ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const vueltaRapida = {
-        Bahrein: 'Quevedo'
+        Bahrein: 'Quevedo',
+        Jeddah: 'Diego'
     };
 
     function actualizarTabla() {
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function agregarNoticias() {
         const noticias = [
-            { titulo: 'Quevedo, Diego y Brisa: Los Tres Mejores en Qualy', url: 'QBahrain.html' }
+            { titulo: 'Quevedo, Diego y Brisa: Los Tres Mejores en Qualy', url: 'noticia1.html' }
         ];
 
         const listaNoticias = document.getElementById('lista-noticias');
@@ -147,5 +148,5 @@ document.addEventListener('DOMContentLoaded', () => {
     agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
 
     // Añadir imágenes desde GitHub con un pie de foto
-    agregarVideoImagen('Bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
+    agregarVideoImagen('https://tu-usuario.github.io/tu-repositorio/imagenes/quevedo-gana-bahrain.jpg', 'img', 'Quevedo gana el GP de Bahrain');
 });
