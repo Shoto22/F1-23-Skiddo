@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function agregarNoticias() {
         const noticias = [
-            { titulo: 'Quevedo, Diego y Brisa: Los Tres Mejores en Qualy', url: 'noticia1.html' }
+            { titulo: 'Quevedo, Diego e Brisa: Os tres mellores da Qualy', url: 'QBahrain.html' }
         ];
 
         const listaNoticias = document.getElementById('lista-noticias');
