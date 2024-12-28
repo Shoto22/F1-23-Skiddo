@@ -118,7 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function agregarNoticias() {
         const noticias = [
             { titulo: 'Quevedo, Diego e Brisa: Os tres mellores da Qualy', url: 'QBahrain.html' },
-            { titulo: 'Destacadas do GP de Jeddah', url: 'Jeddah.html'}
+            { titulo: 'Destacadas do GP de Jeddah', url: 'Jeddah.html'},
+            { titulo: 'Destacadas do GP de Imola', url: 'Imola.html'}
         ];
 
         const listaNoticias = document.getElementById('lista-noticias');
