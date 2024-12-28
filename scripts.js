@@ -26,48 +26,49 @@ document.addEventListener('DOMContentLoaded', () => {
         Imola: 'Diego'
     };
 
-    function actualizarTabla() {
-        const cuerpoTabla = document.getElementById('resultados-body');
-        cuerpoTabla.innerHTML = ''; // Limpiar el contenido anterior
+   function actualizarTabla() {
+    const cuerpoTabla = document.getElementById('resultados-body');
+    cuerpoTabla.innerHTML = ''; // Limpiar el contenido anterior
 
-        const pilotosConPuntos = pilotos.map((piloto, indice) => {
-            let totalPuntos = 0;
-            for (const carrera in resultados) {
-                let posicion = resultados[carrera][indice] || '-';
-                totalPuntos += posicion !== '-' ? obtenerPuntos(posicion) : 0;
+    const pilotosConPuntos = pilotos.map((piloto, indice) => {
+        let totalPuntos = 0;
+        for (const carrera in resultados) {
+            let posicion = resultados[carrera][indice] || '-';
+            totalPuntos += posicion !== '-' ? obtenerPuntos(posicion) : 0;
 
-                // Añadir punto por vuelta rápida si aplica
-                if (vueltaRapida[carrera] === piloto) {
-                    totalPuntos += 1;
-                }
+            // Añadir punto por vuelta rápida si aplica
+            if (vueltaRapida[carrera] === piloto) {
+                totalPuntos += 1;
             }
-            return { piloto, totalPuntos, indice };
-        });
+        }
+        return { piloto, totalPuntos, indice };
+    });
 
-        // Ordenar pilotos por puntos totales
-        pilotosConPuntos.sort((a, b) => b.totalPuntos - a.totalPuntos);
+    // Ordenar pilotos por puntos totales
+    pilotosConPuntos.sort((a, b) => b.totalPuntos - a.totalPuntos);
 
-        pilotosConPuntos.forEach(({ piloto, totalPuntos, indice }) => {
-            let fila = document.createElement('tr');
-            let celdaPiloto = document.createElement('td');
-            celdaPiloto.textContent = piloto;
-            fila.appendChild(celdaPiloto);
+    pilotosConPuntos.forEach(({ piloto, totalPuntos, indice }) => {
+        let fila = document.createElement('tr');
+        let celdaPiloto = document.createElement('td');
+        celdaPiloto.textContent = piloto;
+        fila.appendChild(celdaPiloto);
 
-            for (const carrera in resultados) {
-                let celdaCarrera = document.createElement('td');
-                let posicion = resultados[carrera][indice] || '-';
-                celdaCarrera.textContent = posicion;
-                fila.appendChild(celdaCarrera);
-            }
+        for (const carrera in resultados) {
+            let celdaCarrera = document.createElement('td');
+            let posicion = resultados[carrera][indice] || '-';
+            celdaCarrera.textContent = posicion;
+            fila.appendChild(celdaCarrera);
+        }
 
-            let celdaTotal = document.createElement('td');
-            celdaTotal.textContent = totalPuntos;
-            fila.appendChild(celdaTotal);
+        let celdaTotal = document.createElement('td');
+        celdaTotal.textContent = totalPuntos;
+        fila.appendChild(celdaTotal);
 
-            cuerpoTabla.appendChild(fila);
-        });
-        actualizarVueltaRapida();
-    }
+        cuerpoTabla.appendChild(fila);
+    });
+
+    actualizarVueltaRapida();  // Añadir esta línea al final de actualizarTabla
+}
 
     function obtenerPuntos(posicion) {
         switch(posicion) {
