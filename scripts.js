@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cuerpoTabla.appendChild(fila);
         });
+        actualizarVueltaRapida();
     }
 
     function obtenerPuntos(posicion) {
@@ -130,6 +131,16 @@ document.addEventListener('DOMContentLoaded', () => {
             listaNoticias.appendChild(listItem);
         });
     }
+    function actualizarVueltaRapida() {
+    const listaVueltaRapida = document.getElementById('lista-vuelta-rapida');
+    listaVueltaRapida.innerHTML = ''; // Limpiar el contenido anterior
+    for (const carrera in vueltaRapida) {
+        let listItem = document.createElement('li');
+        listItem.textContent = `Vuelta Rápida en ${carrera}: ${vueltaRapida[carrera]}`;
+        listaVueltaRapida.appendChild(listItem);
+    }
+}
+
 
     function forceDesktopView() {
         const viewport = document.querySelector("meta[name=viewport]");
