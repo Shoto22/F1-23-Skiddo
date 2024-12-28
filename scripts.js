@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     listaVueltaRapida.innerHTML = ''; // Limpiar el contenido anterior
     for (const carrera in vueltaRapida) {
         let listItem = document.createElement('li');
-        listItem.textContent = `Volta Rápida en ${carrera}: ${vueltaRapida[carrera]}`;
+        listItem.textContent = `${carrera}: ${vueltaRapida[carrera]}`;
         listaVueltaRapida.appendChild(listItem);
     }
 }
