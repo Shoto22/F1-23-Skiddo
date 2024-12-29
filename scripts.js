@@ -93,15 +93,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (tipo === 'video') {
             elemento.src = url;
-            elemento.width = "560";
-            elemento.height = "315";
+            elemento.width = "560px";
+            elemento.height = "315px";
             elemento.frameBorder = "0";
             elemento.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             elemento.allowFullscreen = true;
         } else {
             elemento.src = url;
-            elemento.width = 560;
-            elemento.height = 315;
+            elemento.width = 560px;
+            elemento.height = 315px;
             elemento.classList.add('clickable-image');
         }
         
