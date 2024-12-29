@@ -26,59 +26,49 @@ document.addEventListener('DOMContentLoaded', () => {
         Imola: 'Diego'
     };
 
-    function actualizarTabla() {
-        const cuerpoTabla = document.getElementById('resultados-body');
-        cuerpoTabla.innerHTML = ''; // Limpiar el contenido anterior
+   function actualizarTabla() {
+    const cuerpoTabla = document.getElementById('resultados-body');
+    cuerpoTabla.innerHTML = ''; // Limpiar el contenido anterior
 
-        const pilotosConPuntos = pilotos.map((piloto, indice) => {
-            let totalPuntos = 0;
-            for (const carrera in resultados) {
-                let posicion = resultados[carrera][indice] || '-';
-                totalPuntos += posicion !== '-' ? obtenerPuntos(posicion) : 0;
+    const pilotosConPuntos = pilotos.map((piloto, indice) => {
+        let totalPuntos = 0;
+        for (const carrera in resultados) {
+            let posicion = resultados[carrera][indice] || '-';
+            totalPuntos += posicion !== '-' ? obtenerPuntos(posicion) : 0;
 
-                // Añadir punto por vuelta rápida si aplica
-                if (vueltaRapida[carrera] === piloto) {
-                    totalPuntos += 1;
-                }
+            // Añadir punto por vuelta rápida si aplica
+            if (vueltaRapida[carrera] === piloto) {
+                totalPuntos += 1;
             }
-            return { piloto, totalPuntos, indice };
-        });
-
-        // Ordenar pilotos por puntos totales
-        pilotosConPuntos.sort((a, b) => b.totalPuntos - a.totalPuntos);
-
-        pilotosConPuntos.forEach(({ piloto, totalPuntos, indice }) => {
-            let fila = document.createElement('tr');
-            let celdaPiloto = document.createElement('td');
-            celdaPiloto.textContent = piloto;
-            fila.appendChild(celdaPiloto);
-
-            for (const carrera in resultados) {
-                let celdaCarrera = document.createElement('td');
-                let posicion = resultados[carrera][indice] || '-';
-                celdaCarrera.textContent = posicion;
-                fila.appendChild(celdaCarrera);
-            }
-
-            let celdaTotal = document.createElement('td');
-            celdaTotal.textContent = totalPuntos;
-            fila.appendChild(celdaTotal);
-
-            cuerpoTabla.appendChild(fila);
-        });
-
-        actualizarVueltaRapida();  // Añadir esta línea al final de actualizarTabla
-    }
-
-    function actualizarVueltaRapida() {
-        const listaVueltaRapida = document.getElementById('lista-vuelta-rapida');
-        listaVueltaRapida.innerHTML = ''; // Limpiar el contenido anterior
-        for (const carrera in vueltaRapida) {
-            let listItem = document.createElement('li');
-            listItem.textContent = `Vuelta Rápida en ${carrera}: ${vueltaRapida[carrera]}`;
-            listaVueltaRapida.appendChild(listItem);
         }
-    }
+        return { piloto, totalPuntos, indice };
+    });
+
+    // Ordenar pilotos por puntos totales
+    pilotosConPuntos.sort((a, b) => b.totalPuntos - a.totalPuntos);
+
+    pilotosConPuntos.forEach(({ piloto, totalPuntos, indice }) => {
+        let fila = document.createElement('tr');
+        let celdaPiloto = document.createElement('td');
+        celdaPiloto.textContent = piloto;
+        fila.appendChild(celdaPiloto);
+
+        for (const carrera in resultados) {
+            let celdaCarrera = document.createElement('td');
+            let posicion = resultados[carrera][indice] || '-';
+            celdaCarrera.textContent = posicion;
+            fila.appendChild(celdaCarrera);
+        }
+
+        let celdaTotal = document.createElement('td');
+        celdaTotal.textContent = totalPuntos;
+        fila.appendChild(celdaTotal);
+
+        cuerpoTabla.appendChild(fila);
+    });
+
+    actualizarVueltaRapida();  // Añadir esta línea al final de actualizarTabla
+}
 
     function obtenerPuntos(posicion) {
         switch(posicion) {
@@ -103,15 +93,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (tipo === 'video') {
             elemento.src = url;
-            elemento.width = "560";
-            elemento.height = "315";
+            elemento.width = "1120";
+            elemento.height = "630";
             elemento.frameBorder = "0";
             elemento.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             elemento.allowFullscreen = true;
         } else {
             elemento.src = url;
-            elemento.width = 560;
-            elemento.height = 315;
+            elemento.width = 1120;
+            elemento.height = 630;
             elemento.classList.add('clickable-image');
         }
         
@@ -129,7 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function agregarNoticias() {
         const noticias = [
             { titulo: 'Quevedo, Diego e Brisa: Os tres mellores da Qualy', url: 'QBahrain.html' },
-            { titulo: 'Destacadas do GP de Jeddah', url: 'Jeddah.html'}
+            { titulo: 'Destacadas do GP de Jeddah', url: 'Jeddah.html'},
+            { titulo: 'Destacadas do GP de Imola', url: 'Imola.html'}
         ];
 
         const listaNoticias = document.getElementById('lista-noticias');
@@ -142,6 +133,16 @@ document.addEventListener('DOMContentLoaded', () => {
             listaNoticias.appendChild(listItem);
         });
     }
+    function actualizarVueltaRapida() {
+    const listaVueltaRapida = document.getElementById('lista-vuelta-rapida');
+    listaVueltaRapida.innerHTML = ''; // Limpiar el contenido anterior
+    for (const carrera in vueltaRapida) {
+        let listItem = document.createElement('li');
+        listItem.textContent = `${carrera}: ${vueltaRapida[carrera]}`;
+        listaVueltaRapida.appendChild(listItem);
+    }
+}
+
 
     function forceDesktopView() {
         const viewport = document.querySelector("meta[name=viewport]");
