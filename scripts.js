@@ -86,35 +86,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function agregarVideoImagen(url, tipo, caption = '') {
-        const contenedor = document.getElementById('videos-imagenes');
-        const contenedorFigura = document.createElement('figure');
-        const elemento = document.createElement(tipo === 'video' ? 'iframe' : 'img');
+function agregarVideoImagen(url, tipo, caption = '') {
+    const contenedor = document.getElementById('videos-imagenes');
+    const contenedorFigura = document.createElement('figure');
+    const elemento = document.createElement(tipo === 'video' ? 'iframe' : 'img');
 
-        if (tipo === 'video') {
-            elemento.src = url;
-            elemento.width = "560px";
-            elemento.height = "315px";
-            elemento.frameBorder = "0";
-            elemento.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            elemento.allowFullscreen = true;
-        } else {
-            elemento.src = url;
-            elemento.width = 560px;
-            elemento.height = 315px;
-            elemento.classList.add('clickable-image');
-        }
-        
-        contenedorFigura.appendChild(elemento);
-
-        if (caption) {
-            const figcaption = document.createElement('figcaption');
-            figcaption.textContent = caption;
-            contenedorFigura.appendChild(figcaption);
-        }
-
-        contenedor.appendChild(contenedorFigura);
+    if (tipo === 'video') {
+        elemento.src = url;
+        elemento.width = "560";
+        elemento.height = "315";
+        elemento.frameBorder = "0";
+        elemento.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        elemento.allowFullscreen = true;
+    } else {
+        elemento.src = url;
+        elemento.width = 560;
+        elemento.height = 315;
+        elemento.classList.add('clickable-image');
     }
+    
+    contenedorFigura.appendChild(elemento);
+
+    if (caption) {
+        const figcaption = document.createElement('figcaption');
+        figcaption.textContent = caption;
+        contenedorFigura.appendChild(figcaption);
+    }
+
+    contenedor.appendChild(contenedorFigura);
+}
 
     function agregarNoticias() {
         const noticias = [
@@ -171,8 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
     agregarNoticias();
 
     // Añadir el video de YouTube
-    agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video'),
+agregarVideoImagen('https://www.youtube.com/embed/q9Bv0B-wJ5s', 'video');
 
-    // Añadir imágenes desde GitHub con un pie de foto
-    agregarVideoImagen('Bahrain.jpg', 'img', 'Quevedo gaña o GP de Bahrain');
-});
+// Añadir imágenes desde GitHub con un pie de foto
+agregarVideoImagen('Bahrain.jpg', 'img', 'Quevedo gaña o GP de Bahrain');
+
