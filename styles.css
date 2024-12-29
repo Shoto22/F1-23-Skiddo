@@ -64,7 +64,7 @@ th, td {
 #destacados iframe,
 #destacados img {
     width: 100%;
-    max-width: 1120px;
+    max-width: 560px;
     height: auto;
     aspect-ratio: 16 / 9;
     margin-bottom: 1em;
