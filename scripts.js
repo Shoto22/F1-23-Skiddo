@@ -125,7 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { titulo: 'Quevedo, Diego e Brisa: Os tres mellores da Qualy', url: 'QBahrain.html' },
             { titulo: 'Destacadas do GP de Jeddah', url: 'Jeddah.html'},
             { titulo: 'Destacadas do GP de Imola', url: 'Imola.html'},
-            { titulo: 'A movida carreira de Spa' , url: 'Spa.html'}
+            { titulo: 'A movida carreira de Spa' , url: 'Spa.html'},
+            { titulo: 'Galería do GP de Singapore' , url:'Singapur.html'}
         ];
 
         const listaNoticias = document.getElementById('lista-noticias');
