@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         Silverstone: 'Quevedo',
         Spa: 'Quevedo',
         Singapur: 'Quevedo',
-        Monza: 'Diego'
+        Monza: 'Diego',
+        Austin: 'Diego'
     };
 
    function actualizarTabla() {
